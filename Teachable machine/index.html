@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SignEase | Sign Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">S</span>
+            <span>Sign<span class="logo-highlight">Ease</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#translator">Translator</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#translator" class="nav-button">
+            Start Translating
+        </a>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    YOUR HANDS, YOUR VOICE
+                </span>
+
+                <h1>
+                    Breaking Barriers,<br>
+                    <span>One Sign at a Time.</span>
+                </h1>
+
+                <p>
+                    Communicate with confidence using our basic sign language
+                    translator. Show a hand sign to your camera and let the
+                    system recognize the letter or word.
+                </p>
+
+                <a href="#translator" class="primary-button">
+                    Try the Translator
+                    <span>→</span>
+                </a>
+
+                <div class="hero-note">
+                    <span class="note-dot"></span>
+                    Simple, accessible, and easy to use
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="visual-card">
+
+                    <div class="visual-top">
+                        <span class="visual-dot"></span>
+                        <span class="visual-dot"></span>
+                        <span class="visual-dot"></span>
+                        <span class="visual-label">SIGN LANGUAGE</span>
+                    </div>
+
+                    <div class="hand-illustration" aria-hidden="true">
+                        <span>✋</span>
+                    </div>
+
+                    <div class="visual-caption">
+                        <div>
+                            <strong>Express yourself</strong>
+                            <p>Every gesture matters.</p>
+                        </div>
+
+                        <span class="visual-check">✓</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-badge">
+                    <span class="badge-icon">✓</span>
+                    Ready to communicate
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Translator Section -->
+        <section class="translator-section" id="translator">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">LIVE TRANSLATION</span>
+
+                <h2>Sign Language Translator</h2>
+
+                <p>
+                    Position your hand in front of the camera and show a sign.
+                    Your recognized result will appear below.
+                </p>
+
+            </div>
+
+
+            <div class="translator-grid">
+
+                <!-- Camera Card -->
+                <div class="card camera-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Camera Preview</h3>
+                            <p>Show your hand clearly.</p>
+                        </div>
+
+                        <div class="camera-status" id="camera-status">
+                            <span class="status-dot"></span>
+                            <span id="camera-status-text">Camera off</span>
+                        </div>
+
+                    </div>
+
+                    <div class="camera-screen" id="webcam-container">
+
+                        <div class="camera-placeholder" id="camera-placeholder">
+
+                            <div class="camera-icon">◎</div>
+
+                            <h4>Your camera will appear here</h4>
+
+                            <p>
+                                Press the button below to enable your camera.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="camera-instructions">
+
+                        <span class="instruction-icon">ⓘ</span>
+
+                        <p>
+                            Keep your hand inside the camera view and use
+                            good lighting for better recognition.
+                        </p>
+
+                    </div>
+
+                    <div class="camera-controls">
+
+                        <button
+                            type="button"
+                            id="start-button"
+                            class="primary-button full-button">
+
+                            <span>▶</span>
+                            Start Camera
+
+                        </button>
+
+                        <button
+                            type="button"
+                            id="stop-button"
+                            class="secondary-button full-button"
+                            disabled>
+
+                            Stop Camera
+
+                        </button>
+
+                    </div>
+
+                    <p
+                        class="error-message"
+                        id="error-message"
+                        role="alert"
+                        hidden>
+                    </p>
+
+                </div>
+
+
+                <!-- Recognition Result Card -->
+                <div class="card result-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recognition Result</h3>
+                            <p>Your sign will appear here.</p>
+                        </div>
+
+                        <span class="result-icon">✦</span>
+
+                    </div>
+
+                    <div class="result-display" aria-live="polite">
+
+                        <span class="result-label" id="result-label">
+                            WAITING FOR INPUT
+                        </span>
+
+                        <div id="recognized-sign" class="recognized-sign">
+                            —
+                        </div>
+
+                        <p id="status" class="result-message">
+                            Start the camera and show a sign.
+                        </p>
+
+                    </div>
+
+                    <div class="result-divider"></div>
+
+                    <div class="how-it-works">
+
+                        <h4>How to use</h4>
+
+                        <div class="step">
+
+                            <span class="step-number">01</span>
+
+                            <div>
+                                <strong>Start the camera</strong>
+                                <p>Allow access when your browser asks.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="step">
+
+                            <span class="step-number">02</span>
+
+                            <div>
+                                <strong>Show a hand sign</strong>
+                                <p>Keep your hand clearly visible.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="step">
+
+                            <span class="step-number">03</span>
+
+                            <div>
+                                <strong>See the result</strong>
+                                <p>The recognized class appears automatically.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="privacy-note">
+                Your camera is used for live recognition while the translator
+                is running. This page does not intentionally save camera
+                recordings.
+            </p>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+
+                <span class="eyebrow">ABOUT SIGNEASE</span>
+
+                <h2>Communication should be for everyone.</h2>
+
+                <p>
+                    SignEase is a basic sign recognition project designed to
+                    demonstrate how machine learning can help recognize
+                    hand signs through a webcam.
+                </p>
+
+            </div>
+
+            <div class="about-feature">
+
+                <div class="feature-icon">✋</div>
+
+                <div>
+                    <h3>Hand Sign Recognition</h3>
+                    <p>
+                        Uses a trained image recognition model to identify
+                        signs included in its classes.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <a href="#home" class="logo footer-logo">
+            <span class="logo-icon">S</span>
+            <span>Sign<span class="logo-highlight">Ease</span></span>
+        </a>
+
+        <p>Making communication easier, one sign at a time.</p>
+
+        <span class="copyright">
+            © <span id="current-year"></span> SignEase. Educational project by Jintalan & Dionido.
+        </span>
+
+    </footer>
+
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
+    <!-- Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
